@@ -62,7 +62,7 @@ void Print2DArr(int[,] arr)
 
 // Вводин метод, который печатает двумерный массив
 // с длинной строк в 3 символа.
-void PrintMod2DArr(int[,] arr)
+void PrintMod2DArr(int[,] arr, int line, int post)
 {
     // Вводим массив содержащий различные цвета
     ConsoleColor[] color = new ConsoleColor[]{ConsoleColor.Black, ConsoleColor.Blue, 
@@ -74,11 +74,11 @@ void PrintMod2DArr(int[,] arr)
                                             ConsoleColor.Magenta, ConsoleColor.Red, 
                                             ConsoleColor.White, ConsoleColor.Yellow};
     // Console.Write("[");
-    for(int i=0; i<arr.GetLength(0); i++)
+    for(int i=0; i<line; i++)
     {
-        for(int j=0; j<arr.GetLength(1); j++)
+        for(int j=0; j<post; j++)
         {
-            Console.ForegroundColor = color[new Random().Next(1,1)];
+            Console.ForegroundColor = color[new Random().Next(3,3)];
             Console.Write(arr[i,j] + "\t");
             Console.ResetColor();
         }
@@ -92,7 +92,19 @@ int Column = ReadData("Введите колличество столбцов: "
 int Min = ReadData("Введите минимальное значение: ");
 int Max = ReadData("Введите максимально значение: ");
 // Генерация массива
-int[,] arr2D = Gen2DArr(0, 10, Row, Column);
+int[,] arr2D = Gen2DArr(Min, Max, Row, Column);
 // Вывод(печать) массива
 Print2DArr(arr2D);
 Console.WriteLine(" ");
+
+int NumLine = ReadData("Введите ограничение по строкам: ");
+int NumPost = ReadData("Введите ограничение по столбцам: ");
+if( NumLine > 3 && NumPost > 3)
+{
+    Console.WriteLine("Заданные значения не соответсвуют параметрам задачи");
+
+}
+else
+{
+    PrintMod2DArr(arr2D, NumLine, NumPost);
+}
