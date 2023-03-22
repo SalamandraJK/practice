@@ -33,14 +33,18 @@ string [] GetNewArray(string [] arry, int count)
 
 string [] Main(int NumLenght)
 {
-    string[] strs = new string[NumLenght]; //Объявляем массив строк длиной n (которую ввёл пользователь)
+    // Объявляем массив с заданной длинной строк
+    string[] strs = new string[NumLenght];
 
     for (int i = 0; i < NumLenght; i++)
         {
+             //Заполняем массив
             Console.Write("Введите строку №{0}:\r\n    ", i + 1);
-            strs[i] = Console.ReadLine(); //Заполняем массив
+            strs[i] = Console.ReadLine();
         }
+
         Console.WriteLine("Вы ввели следующие строки:");
+
         for (int i = 0; i < NumLenght; i++)
         {
             Console.WriteLine(strs[i]);
@@ -51,8 +55,11 @@ string [] Main(int NumLenght)
 int NumLine = ReadData("Введите колличество строк: ");
 
 string [] arr1D = Main(NumLine);
+Console.WriteLine("Заданный массив: ");
+Print1DArry(arr1D);
+Console.WriteLine(" ");
 
 string [] resultStrarry = GetNewArray(arr1D,3);
 
-Console.WriteLine("Отсортированный массив: \t");
+Console.WriteLine("Отсортированный массив: ");
 Print1DArry(resultStrarry);
