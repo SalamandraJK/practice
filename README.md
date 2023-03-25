@@ -7,4 +7,4 @@
 
 
 ### Решение в виде блок схемы
-![Блок-схема](G:\Study\Practice\pct\Block.png)
+![Блок-схема]./png/BLC.png
