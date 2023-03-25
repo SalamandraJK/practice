@@ -54,3 +54,14 @@ string [] Main(int NumLenght)
     return strs;
 }
 
+int NumLine = ReadData("Введите колличество строк: ");
+
+string [] arr1D = Main(NumLine);
+Console.WriteLine("Заданный массив: ");
+Print1DArry(arr1D);
+Console.WriteLine(" ");
+
+string [] resultStrarry = GetNewArray(arr1D,3);
+
+Console.WriteLine("Отсортированный массив: ");
+Print1DArry(resultStrarry);
